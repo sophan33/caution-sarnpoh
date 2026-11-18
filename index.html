@@ -5,27 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Caution - ប្រយ័ត្ន</title>
 
-  <!-- Google Fonts: Kantumruy Pro for crisp, readable Khmer & English -->
-  <link rel="preconnect" href="https://googleapis.com">
-  <link rel="preconnect" href="https://gstatic.com" crossorigin>
-  <link href="https://googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts: FIXED URLs -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Pico.css v2 -->
-  <link rel="stylesheet" href="https://jsdelivr.net">
+  <!-- Pico.css v2: FIXED URL -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
 
   <style>
     :root {
       /* Typography */
       --pico-font-family: 'Kantumruy Pro', system-ui, -apple-system, sans-serif;
-      --pico-line-height: 1.7;
+      --pico-line-height: 1.8; /* Slightly higher for Khmer readability */
 
-      /* Eye-Friendly Dark Palette (Prevents harsh pure-white/pure-black glare) */
-      --pico-background-color: #111317;
+      /* Eye-Friendly Dark Palette */
+      --pico-background-color: #0f1115;
       --pico-color: #e2e8f0;
       --pico-muted-color: #94a3b8;
       --pico-muted-border-color: #262b36;
 
-      /* Caution Yellow Theme & High-Contrast Button Fixes */
+      /* Caution Yellow Theme */
       --pico-primary: #facc15;
       --pico-primary-background: #facc15;
       --pico-primary-border: #facc15;
@@ -33,12 +33,7 @@
       --pico-primary-hover-background: #eab308;
       --pico-primary-hover-border: #eab308;
       --pico-primary-focus: rgba(250, 204, 21, 0.35);
-      --pico-primary-inverse: #111317; /* Dark text on yellow buttons for readability */
-
-      /* Headings */
-      --pico-h1-color: #ffffff;
-      --pico-h2-color: #f8fafc;
-      --pico-h3-color: #facc15;
+      --pico-primary-inverse: #111317;
     }
 
     html {
@@ -54,8 +49,8 @@
 
     .badge {
       display: inline-block;
-      padding: 0.25rem 0.75rem;
-      margin-bottom: 1rem;
+      padding: 0.35rem 0.85rem;
+      margin-bottom: 1.5rem;
       font-size: 0.85rem;
       font-weight: 600;
       color: #facc15;
@@ -67,11 +62,11 @@
     .hero h1 {
       font-size: clamp(2.2rem, 5vw, 3.5rem);
       margin-bottom: 0.75rem;
-      letter-spacing: -0.02em;
+      /* Removed negative letter-spacing so Khmer renders perfectly */
     }
 
     .hero p {
-      max-width: 600px;
+      max-width: 650px;
       margin: 0 auto 2rem;
       font-size: 1.15rem;
       color: var(--pico-muted-color);
@@ -124,6 +119,7 @@
       margin-top: 0;
       margin-bottom: 0.75rem;
       font-size: 1.3rem;
+      color: #facc15;
     }
 
     .card p {
@@ -139,6 +135,7 @@
       display: inline-flex;
       align-items: center;
       gap: 0.35rem;
+      color: #facc15;
     }
 
     .read-more:hover {
@@ -155,7 +152,7 @@
 
     .about-box p {
       margin-bottom: 0;
-      max-width: 75ch; /* Optimal line length for comfortable reading */
+      max-width: 75ch; 
     }
 
     /* Footer */
@@ -184,7 +181,7 @@
 
     <!-- Latest Warnings Section -->
     <section id="articles" class="section-spacing">
-      <h2>បម្រាមថ្មីៗ (Latest Warnings)</h2>
+      <h2>ការព្រមានថ្មីៗ (Latest Warnings)</h2>
       <div class="grid-cards">
         <article class="card">
           <div>
