@@ -1,11 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="km">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Caution - ប្រយ័ត្ន</title>
+    <!-- Pico.css for automatic beautiful styling -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <style>
+        /* Custom Dark Mode Colors */
+        :root {
+            --pico-background-color: #121212;
+            --pico-color: #ffffff;
+            --pico-primary: #facc15; /* Caution Yellow */
+        }
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #a0aec0;
+        }
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .card {
+            background: #1e1e1e;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+        .card h3 {
+            color: #facc15;
+            margin-top: 0;
+        }
+    </style>
 </head>
 <body>
-    <h1>Caution - ប្រយ័ត្ន</h1>
-    <p>ការយល់ដឹងពីសុវត្ថិភាពនៅលើពិភពឌីជីថល</p>
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Caution - ប្រយ័ត្ន</h1>
+            <p>ការលើកកម្ពស់ការយល់ដឹងអំពីសុវត្ថិភាពឌីជីថលនៅកម្ពុជា</p>
+            <a href="https://facebook.com/caution.sarnpoh" role="button">Follow on Facebook</a>
+            <a href="#articles" role="button" class="secondary">Read Latest Articles</a>
+        </section>
+
+        <!-- Latest Warnings Section -->
+        <section id="articles">
+            <h2>បម្រាមថ្មីៗ (Latest Warnings)</h2>
+            <div class="grid-cards">
+                <article class="card">
+                    <h3>ការឆបោកតាម VPN</h3>
+                    <p>ការពិតអំពី VPN ឥតគិតថ្លៃ និងហានិភ័យដែលអ្នកមិនដឹង។</p>
+                    <a href="#">អានបន្ថែម</a>
+                </article>
+                <article class="card">
+                    <h3>Hacker for Hire</h3>
+                    <p>កុំជឿអ្នកដែលអះអាងថាអាច Hack គណនី Facebook អ្នកបាន។</p>
+                    <a href="#">អានបន្ថែម</a>
+                </article>
+                <article class="card">
+                    <h3>អន្ទាក់ចិត្តវិទ្យា</h3>
+                    <p>របៀបដែលពាណិជ្ជកម្មប្រើប្រាស់ FOMO ដើម្បីបញ្ឆោតអ្នក។</p>
+                    <a href="#">អានបន្ថែម</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section style="margin-top: 4rem;">
+            <h2>អំពីយើង (About Us)</h2>
+            <p>យើងមិនមែនជាទំព័របង្រៀនបច្ចេកវិទ្យាធម្មតាទេ។ យើងគឺជាម៉ាកយីហោផ្នែកយល់ដឹងអំពីសុវត្ថិភាពឌីជីថល។ យើងបង្ហាញពីល្បិចផ្លូវចិត្តដែលត្រូវបានប្រើប្រាស់ដោយអ្នកទីផ្សារ និងអ្នកបោកប្រាស់ ដើម្បីផ្តល់អំណាចដល់អ្នកក្នុងការធ្វើការសម្រេចចិត្តប្រកបដោយប្រាជ្ញា។</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="container" style="text-align: center; margin-top: 4rem; padding-bottom: 2rem;">
+        <p>© 2026 Caution - Sarnpoh. All rights reserved.</p>
+    </footer>
 </body>
 </html>
