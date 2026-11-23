@@ -28,7 +28,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
     </div>
 
     <p>Welcome to the vault. Here is where you will write and manage your articles.</p>
-    
+    <a href="new_article.php" class="btn" style="background: #5cb85c; margin-bottom: 20px; display: inline-block;">+ Write New Article</a>
     <hr>
     <h3>Your Articles (Coming Soon)</h3>
     <p>In the next step, we will connect this to the database to list all your drafts and published posts.</p>
