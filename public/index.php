@@ -18,6 +18,7 @@ $articles = $stmt->fetchAll(); // Put all results into an array
     <title>Caution - ប្រុងប្រយ័ត្ន</title>
     <!-- Add this line to link your CSS -->
     <link rel="stylesheet" href="/asset/style.css">
+    <link rel="icon" href="/asset/favicon.png" type="image/x-icon">
 </head>
 <body>
 
