@@ -1,5 +1,5 @@
 <?php
 session_start();
-session_destroy(); // Destroys the session cookie
-header('Location: index.php'); // Send them back to login
+session_destroy();
+header('Location: login.php');
 exit;

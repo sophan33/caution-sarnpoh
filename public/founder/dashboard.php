@@ -1,37 +1,53 @@
 <?php
-session_start();
+require __DIR__ . '/auth.php';
+require __DIR__ . '/../../src/db.php';
+require __DIR__ . '/../../src/helpers.php';
 
-// THE BOUNCER: If not logged in, kick them back to the login page
-if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
-    header('Location: index.php');
-    exit;
-}
+$articles = $db->query('SELECT id, title_km, published, created_at
+                        FROM articles
+                        ORDER BY created_at DESC')->fetchAll();
 ?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="km">
 <head>
     <meta charset="UTF-8">
-    <title>Founder Dashboard</title>
-    <style>
-        body { font-family: sans-serif; padding: 40px; background: #f4f4f4; }
-        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-        .btn { padding: 10px 15px; background: #0275d8; color: white; text-decoration: none; border-radius: 4px; }
-        .logout { background: #d9534f; }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard | Caution</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+<main>
+    <h1>Dashboard</h1>
+    <p>
+        <a href="new.php">+ Post អត្ថបទថ្មី</a> |
+        <a href="../index.php">View site</a> |
+        <a href="logout.php">Logout</a>
+    </p>
 
-    <div class="header">
-        <h1>Founder Dashboard</h1>
-        <a href="logout.php" class="btn logout">Logout</a>
-    </div>
-
-    <p>Welcome to the vault. Here is where you will write and manage your articles.</p>
-    <a href="new_article.php" class="btn" style="background: #5cb85c; margin-bottom: 20px; display: inline-block;">+ Write New Article</a>
-    <hr>
-    <h3>Your Articles (Coming Soon)</h3>
-    <p>In the next step, we will connect this to the database to list all your drafts and published posts.</p>
-
+<?php if (empty($articles)): ?>
+        <p>No articles yet.</p>
+    <?php else: ?>
+        <table class="admin-table">
+            <tr><th>ID</th><th>Title</th><th>Status</th><th>Created</th><th>Actions</th></tr>
+            <?php foreach ($articles as $a): ?>
+            <tr>
+                <td><?= (int)$a['id'] ?></td>
+                <td><?= e($a['title_km']) ?></td>
+                <td><?= $a['published'] ? 'Published' : 'Draft' ?></td>
+                <td><?= e($a['created_at']) ?></td>
+                <td class="actions">
+                    <a href="edit.php?id=<?= (int)$a['id'] ?>">Edit</a>
+                    <form method="post" action="delete.php" class="inline-form"
+                          onsubmit="return confirm('Delete permanently?');">
+                        <?= csrf_field() ?>
+                        <input type="hidden" name="id" value="<?= (int)$a['id'] ?>">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+    <?php endif; ?>
+</main>
 </body>
 </html>

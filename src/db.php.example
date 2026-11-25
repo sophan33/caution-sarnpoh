@@ -1,0 +1,16 @@
+<?php
+// Template. Copy to src/db.php on each server and fill in real values.
+// src/db.php is gitignored and NEVER committed.
+
+$dsn = 'mysql:host=localhost;dbname=caution_db;charset=utf8mb4';
+
+try {
+    $db = new PDO($dsn, 'caution_user', 'REPLACE_ME', [
+        PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+        PDO::ATTR_EMULATE_PREPARES   => false,
+    ]);
+} catch (PDOException $e) {
+    http_response_code(500);
+    exit('Database connection failed.');
+}

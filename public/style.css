@@ -1,0 +1,73 @@
+/* Caution baseline. Evolve this — it's the face of the brand. */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: "Khmer OS", "Noto Sans Khmer", system-ui, sans-serif;
+    background: #f5f6f8;
+    color: #1f2937;
+    line-height: 1.7;
+}
+
+.site-header {
+    background: #111827;
+    color: #f9fafb;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+.site-header h1 { font-size: 1.6rem; }
+.tagline { color: #9ca3af; margin-top: .3rem; }
+
+main { max-width: 720px; margin: 2rem auto; padding: 0 1rem; }
+
+.article-grid { display: grid; gap: 1rem; }
+.card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 1.2rem;
+}
+.card a { color: #111827; text-decoration: none; }
+.card a:hover { text-decoration: underline; }
+.title-en { color: #6b7280; font-size: .9rem; }
+time { color: #9ca3af; font-size: .8rem; }
+
+article h1 { margin-bottom: .4rem; }
+.body-km, .body-en { margin-top: 1rem; white-space: pre-wrap; }
+
+.form-page label { display: block; margin-bottom: 1rem; }
+.form-page input[type="text"],
+.form-page input[type="password"],
+.form-page textarea {
+    width: 100%;
+    padding: .6rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+.checkbox input { width: auto; }
+button {
+    background: #111827;
+    color: #fff;
+    border: 0;
+    padding: .6rem 1.4rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.error { color: #b91c1c; margin-bottom: 1rem; }
+
+.admin-table { width: 100%; border-collapse: collapse; background: #fff; }
+.admin-table th, .admin-table td {
+    border: 1px solid #e5e7eb;
+    padding: .5rem .7rem;
+    text-align: left;
+    font-size: .9rem;
+}
+.inline-form { display: inline; }
+
+footer {
+    text-align: center;
+    color: #6b7280;
+    padding: 2rem 0;
+    font-size: .85rem;
+}
